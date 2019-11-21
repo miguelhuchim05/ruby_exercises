@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 2</title>
+</head>
+<body>
+  <input type="text" id="words">
+  <button onclick="textToH2()">Click</button>
+  <h2 id="text-h2"></h2>
+
+  <script>
+    function textToH2() {
+      const text = document.getElementById("words").value;
+      document.getElementById("text-h2").innerHTML = text;
+    }
+  </script>
+</body>
+</html>

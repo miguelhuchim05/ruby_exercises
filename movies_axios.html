@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Movies</title>
+</head>
+<body>
+
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+  <table id="js-movie-table" border="1">
+    <thead>
+      <tr>
+        <th>Movie Name</th>
+        <th>Year</th>
+        <th>Actors</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>BLAH</td>
+        <td>BLAH</td>
+        <td>BLAH</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+<script type="text/javascript">
+  const type = "jim";
+  const queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&apikey=40e9cece";
+
+  axios.get(queryURL)
+    .then(function (response) {
+      printMovies(response);
+    }).catch(function (error) {
+      console.log(error);
+  });
+
+  function printMovies(movie) {
+    const movieTable = $('#js-movie-table');
+    const newMovieRow = "<tr><td>" + movie.data.Title + "</td><td>" + movie.data.Year + "</td><td>" + movie.data.Actors + "</td></tr>";
+    movieTable.append(newMovieRow);
+  }
+</script>
+</body>
+</html>

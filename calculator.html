@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>calculator</title>
+</head>
+<body>
+  <input type="text" id="js-number-one">
+  <br>
+  <input type="text" id="js-number-two">
+  <br>
+  <button onclick="calculate('+')">+</button>
+  <button onclick="calculate('-')">-</button>
+  <button onclick="calculate('*')">*</button>
+  <button onclick="calculate('/')">/</button>
+
+  <p id="js-operation-result"></p>
+
+  <script>
+    const numberOne = parseFloat(document.getElementById("js-number-one").value);
+    const numberTwo = parseFloat(document.getElementById("js-number-two").value);
+    const displayResult = document.getElementById("js-operation-result");
+    const errorOperation = "Error, try again please.";
+    const isNumber = number => !isNaN(number);
+    const isUndefined  = number => number === undefined;
+
+    const sum = () => validNumbers() ? numberOne + numberTwo : errorOperation;
+    const subtract = () => validNumbers() ? numberOne - numberTwo : errorOperation;
+    const multiply = () => validNumbers() ? numberOne * numberTwo : errorOperation;
+    const divide = () => validNumbers() ? numberOne / numberTwo : errorOperation;
+    const validNumbers = () => {
+      let validateNumber = isNumber(numberOne) && isNumber(numberTwo);
+      let validateNumberUndefined = isUndefined(numberOne) || isUndefined(numberTwo);
+      return validateNumber && !validateNumberUndefined;
+    }
+
+    function calculate(operator){
+        let operationResult = undefined;
+        switch(operator){
+          case '+':
+            operationResult = sum();
+          break;
+          case '-':
+            operationResult = subtract();
+          break;
+          case '*':
+            operationResult = multiply();
+          break;
+          case '/':
+            operationResult = divide();
+          break;
+        }
+        displayResult.innerHTML = operationResult;
+    }
+  </script>
+</body>
+</html>

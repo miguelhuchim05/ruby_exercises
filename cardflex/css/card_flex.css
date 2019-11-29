@@ -1,0 +1,74 @@
+body {
+  font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 300;
+  color: #333;
+  text-align: center;
+  margin: 50px 0;
+}
+.card {
+  background-color: white;
+  margin: 0 auto;
+  width: 1000px;
+  border-radius: 5px;
+  border: 1px solid #E3E9EB;
+}
+.card .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.card .row .photo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 70%;
+  background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0.20), 
+    rgba(0, 0, 0, 0.25)), 
+    url("../img/hotel.jpg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 300px;
+  background-size: 100%;	
+}
+.card .row .description {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 30%;
+}
+.card .row .description p {
+  font-size: 12px;
+  color: #999;
+  margin: 35px 0 0 20px;
+}
+.card .row .description span {
+  margin: 5px 0 0px 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.card .row .description .direction-header {
+  font-size: 18px;
+  margin-top: 30px;
+  color: #2a63cb;
+  white-space: nowrap; 
+  width: 250px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card .row .description .direction-city {
+  font-size: 14px;
+  color: #999;
+}
+.card .row .description .content {
+  font-size: 15px;
+  font-weight: bold;
+  color: #999;
+  margin: 35px 25px 0 20px;
+  overflow: hidden;
+  max-height: 88px; 
+}

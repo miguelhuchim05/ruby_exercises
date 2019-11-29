@@ -1,0 +1,44 @@
+*{
+  font-family: Avenie;
+  src: url('../src/AvenirNextLTPro-MediumCn.otf');
+}
+a{
+  color: #8D7AFF;
+}
+.flex-container{
+  display: flex;
+  justify-content: center;
+}
+.flex-container > div{
+  text-align: center;
+  margin: 0 450px;
+}
+.color-title{
+  color: #666666;
+}
+.title{
+  font-size: 20px;
+  margin-top: 40px;
+}
+.btn{
+  background-color: white;
+  border: 1px solid #8D7AFF;
+  color: #8D7AFF;
+  margin-top: 20px;
+  padding: 10px 80px;
+  font-size: 16px;
+}
+.margin-top-10{
+  margin-top: 30px;
+}
+.flex-container-img{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.flex-container-img > div img{
+  height: 150px;
+  margin: 8px 45px 0 45px;
+}

@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 230px;
+  text-align: center;
+}
+.photo {
+  padding: 2.5rem; 
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%; 
+  border: 4px solid #8D7AFF; 
+  background: url('like.png') center / 6rem 6rem no-repeat;
+}
+.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+p {
+  color: #4A4A4A;
+  margin: 8px 0;
+  font-size: 16px;
+}
+.card-dashed {
+  width: 350px;
+  height: 180px;
+  background-color: #F9F9F9;
+  border: 1px dashed #917cf7;
+}
+.photo-info {
+  background: url('info.png');
+  background-size: 100px 100px;
+}
+.center-content {
+  text-align: center;
+  margin: 25px 0;
+}
+.center-content button {
+  margin: 10px 0;
+  background-color: #917cf7;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-style: none;
+  box-shadow: 5px 3px 18px #c8befb;
+  padding: 10px 70px;
+}
+.color-text {
+  color: #917cf7;
+  font-weight: bold;
+}

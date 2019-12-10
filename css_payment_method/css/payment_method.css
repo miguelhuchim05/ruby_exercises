@@ -1,0 +1,241 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.title {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(74, 74, 74);
+}
+.main-card-container {
+  display: flex;  
+  flex-direction: column;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px 0px;
+  padding-bottom: 15px;
+  color: rgb(74, 74, 74);
+}
+.text-payment-method {
+  color: rgb(74, 74, 74);
+  font-size: 16px;  
+  margin-top: 5px;
+}
+.text-payment-method img {
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-right: 5px;  
+}
+.container-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+.img-visa {
+  width: 60px;
+  height: 17px;
+  padding: 2px;
+  border: 2px solid;
+  border-color: rgb(204, 204, 204);
+  border-radius: 4px;
+}
+.img-mastercard {
+  width: 50px;
+  height: 40px;
+  padding: 2px;
+  border: 2px solid;
+  border-color: rgb(204, 204, 204);
+  border-radius: 4px;
+}
+.img-amex {
+  width: 50px;
+  height: 40px;
+  padding: 2px;
+  border: 2px solid;
+  border-color: rgb(204, 204, 204);
+  border-radius: 4px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(249, 249, 249);
+  margin-top: 25px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin: 14px 16px 0 16px;
+  font-size: 14px;
+}
+.form-row input {
+  padding: 9px;
+  border-style: none;
+  border: 1px solid;
+  border-color: rgb(236, 236, 236);
+}
+.container-double-column {
+  display: flex;
+  margin: 12px 16px;
+  font-size: 14px;
+}
+.form-row-small {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  padding-right: 10px;
+}
+.form-row-small input {
+  padding: 9px;
+  border-style: none;
+  border: 1px solid;
+  border-color: rgb(236, 236, 236);
+}
+.row-small {
+  max-width: 33%;
+}
+::placeholder {
+  color: rgb(74, 74, 74);
+  opacity: 50%;
+  font-size: 16px;
+}
+.checkbox-container {
+  background-color: white;
+  border: 1px solid;
+  border-color: rgb(236, 236, 236);
+}
+.label-container {
+  display: block;
+  position: relative;
+  padding-top: 8px;  
+  padding-left: 50px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.label-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 6px;
+  left: 18px;
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border: 2px solid;
+  border-radius: 2px;
+  border-color: rgb(141, 122, 255);
+}
+.label-container input:checked ~ .checkmark {
+  background-color: rgb(141, 122, 255);
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.label-container input:checked ~ .checkmark:after {
+  display: block;
+}
+.label-container .checkmark:after {
+  left: 3px;
+  top: 0;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.button-container {  
+  flex-direction: column;
+  display: none;
+}
+.btn {
+  border: 1px solid transparent;
+  padding: 8px;
+  background-color: rgb(141, 122, 255);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px 0px;
+}
+.margin-top-22 {
+  margin-top: 22px;
+}
+.note {
+  color: rgb(155, 155, 155);
+}
+.margin-top-0 {
+  margin-top: 0px;
+}
+.container-note {
+  display: none;
+  justify-content: center;
+}
+.container-promo {
+  display: none;
+  text-align: center;
+  color: rgb(155, 155, 155);
+}
+.label-container-radio {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  padding-top: 5px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.label-container-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark-radio {
+  position: absolute;
+  top: 4px;
+  left: 9px;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  border: 2px solid;
+  border-color: rgb(141, 122, 255);
+  border-radius: 50%;
+}
+.label-container-radio input:checked ~ .checkmark-radio {
+  background-color: white;
+}
+.checkmark-radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.label-container-radio input:checked ~ .checkmark-radio:after {
+  display: block;
+}
+.label-container-radio .checkmark-radio:after {
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(141, 122, 255);
+}

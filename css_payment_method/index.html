@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payment method</title>
+    <link rel="stylesheet" type="text/css" href="css/payment_method.css">    
+  </head>
+  <body>    
+    <div class="container">
+      <p class="title">Elige tu forma de pago</p>
+    </div>  
+    <div class="container">
+      <div class="main-card-container">
+        <div class="text-payment-method">          
+          <label class="label-container-radio">
+            Tarjeta de crédito o débito
+            <input type="radio" name="radio">
+            <span class="checkmark-radio"></span>
+          </label>
+        </div>
+        <div class="container-icons">
+          <img class="img-visa" id="js-img-visa" src="img/visa.png" onclick="showButtonVisa()">
+          <img class="img-mastercard" id="js-img-mastercard" src="img/mastercard.png" onclick="showButtonMastercard()">
+          <img class="img-amex" id="js-img-amex" src="img/amex.png" onclick="showButtonAmex()">
+        </div>
+        <div class="form-container">
+          <div class="form-row">
+            <label>Nombre completo</label>
+            <input type="text" placeholder="Name">
+          </div>
+          <div class="container-double-column">
+            <div class="form-row-small row-small">
+              <label>Vigencia</label>
+              <input type="text" placeholder="mm/aa">
+            </div>
+            <div class="form-row-small row-small">
+              <label>CVV</label>
+              <input type="text" placeholder="___">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>Número de tarjeta</label>
+            <input type="text" placeholder="_______________">
+          </div>
+          <div class="form-row row-small">
+            <label>Código postal</label>
+            <input type="text" placeholder="____">
+          </div>
+          <div class="form-row">
+            <div id="js-promo-container" class="container-promo">
+              <p>Utiliza el código HOMIEMC al pagar con tu tarjeta MASTERCARD y recibe beneficios exclusivos.</p>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="checkbox-container">              
+              <label class="label-container">
+                Guardar tarjeta en cuenta
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-row margin-top-22">
+            <div id="js-button-pay-container" class="button-container"> 
+              <button class="btn">Pagar</button>
+            </div>
+          </div>
+          <div class="form-row margin-top-0">
+            <div id="js-note-container" class="container-note">
+              <p class="note">* Se cobrará el 2.65% por comisión</p>
+            </div>
+            <div id="js-note-amex-container" class="container-note">
+              <p class="note">* Se cobrará el 3.65% por comisión</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

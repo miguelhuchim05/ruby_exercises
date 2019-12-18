@@ -1,0 +1,275 @@
+$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$border-default: solid 1px #E4E1D3;
+$desktop-size: 750px;
+@mixin center-image-inside-flex {
+  justify-content : space-around;
+  align-items: center;
+}
+body {
+  font-family: $font-family;
+}
+.flex-header-container {
+  display: flex;
+  @include center-image-inside-flex;
+  text-align: center;
+  @media screen and (min-width: $desktop-size) {
+    display: none;
+  }
+}
+.container-icon-back {
+  flex-grow: 1;
+}
+.container-home {
+  flex-grow: 2;
+}
+.container-icon-profile {
+  flex-grow: 1;
+  padding: 15px 0;
+}
+.icon-profile {
+  width: 30px;
+  height: 30px;
+}
+.flex-main-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #CCCCCC;
+  @media screen and (min-width: $desktop-size) {
+    width: $desktop-size;
+    margin: 0 auto;
+    border-top: 0px solid;
+  }
+}
+.flex-main-container > div {
+  margin: 10px 20px 0;
+}
+.bordered-container {
+  border: $border-default;
+}
+.text-center {
+  text-align: center;
+}
+.item-title {
+  font-size: 20px;
+  color: #333333;
+  font-weight: bold;
+  @media screen and (min-width: $desktop-size) {
+    font-size: 23px;
+  }
+}
+.item-description {
+  font-weight: 200;
+  color: #333333;
+}
+.padding-lr-10{
+  padding: 0 10px;
+}
+.number-inside-circle {
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+.number-inside-circle img{
+  height: 160px;
+  width: 160px;
+}
+.number-inside-circle span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container-score {
+  display: flex;
+  margin: 0 auto;
+  width: 190px;
+}
+.grid-score {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.rank-start {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-weight: bold;
+  text-align: start;
+}
+.rank-end {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  font-weight: bold;
+  text-align: end;
+}
+.rank-image {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.icon-range {
+  width: 100%;
+}
+.rank-value {
+  text-align: center;
+  padding-left: 15px;
+  font-size: 10px;
+}
+.score-result {
+  border: 1px solid transparent;
+  background-color: rgb(205, 215, 52);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @media screen and (min-width: $desktop-size) {
+    padding-bottom: 100px;
+  }
+}
+.score-result p {
+  padding-left: 20px;
+}
+.score-result p span {
+  font-weight: 600;
+}
+.media-card {
+  display: flex;
+  @include center-image-inside-flex;
+  @media screen and (min-width: $desktop-size) {
+    flex-direction: column;
+  }
+}
+.media-object {
+  flex-grow: 2;
+  padding: 12px;
+}
+.media-object img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #999999;
+  @media screen and (min-width: $desktop-size) {
+    width: 70px;
+    height: 70px;
+  }
+}
+.media-text {
+  flex-grow: 3;
+  padding: 5px;
+  @media screen and (min-width: $desktop-size) {
+    text-align: center;
+    padding: 5px 18px;
+  }
+}
+.media-text p{
+  margin: 5px;
+  @media screen and (min-width: $desktop-size) {
+    margin: 0;
+  }
+}
+.icon-default-size {
+  height: 18px;
+}
+.personal-information-item {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 14px;
+}
+.personal-information-item div img {
+  padding: 0 10px;
+}
+.personal-information-item div p {
+  margin: 0;
+  padding-right: 40px;
+}
+.personal-information-item div p span {
+  font-weight: bold;
+}
+.slogan {
+  font-size: 14px;
+  padding: 15px 25px;
+}
+.slogan div p {
+  @media screen and (min-width: $desktop-size) {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+}
+.slogan div p span {
+  font-weight: bold;
+}
+.icon-sponsor {
+  width: 140px;
+}
+div.save {
+  margin-left: 9px;
+}
+.button-save {
+  border: $border-default;
+  border-radius: 4px;
+  padding: 8px 20px;
+  background-color: white;
+}
+.media-card-desktop {
+  text-align: center;
+  padding: 18px;
+  @media screen and (min-width: $desktop-size) {
+    display: flex;
+    align-items: center;
+    text-align: start;
+  }
+}
+.media-object-desktop {
+  display: none;
+  @media screen and (min-width: $desktop-size) {
+    display: inline-block;
+    padding: 5px 15px 5px 50px;
+  }
+}
+.media-text-desktop {
+  padding: 10px 10px 5px 0;
+}
+.media-text-desktop p {
+  margin: 0;
+}
+.logo {
+  width: 55px;
+  height: 55px;
+}
+.body-desktop-container {
+  display: block;
+  @media screen and (min-width: $desktop-size) {
+    display: flex;
+  }
+}
+.body-second-section {
+  display: block;
+  @media screen and (min-width: $desktop-size) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.margin-left {
+  @media screen and (min-width: $desktop-size) {
+    margin-left: 5px;
+  }
+}
+.margin-top {
+  @media screen and (min-width: $desktop-size) {
+    margin-top: 5px;
+  }
+}
+.margin-bottom {
+  @media screen and (min-width: $desktop-size) {
+    margin-bottom: 5px;
+  }
+}
+.margin-top-movil {
+  margin-top: 10px;
+  @media screen and (min-width: $desktop-size) {
+    margin-top: 0;
+  }
+}
+.flex-main-container .margin-top-4-desktop {
+  @media screen and (min-width: $desktop-size) {
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,158 @@
+<%= stylesheet_link_tag   "reports", :media => "all" %>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<div class="flex-header-container">
+  <div class="container-icon-back">
+    <%= image_tag "icon-back" %>
+  </div>
+  <div class="container-home">
+    <%= image_tag "icon-homie" %>
+  </div>
+  <div class="container-icon-profile">
+    <%= image_tag "icon-profile", :class => "icon-profile"%>
+  </div>
+</div>
+<div class="flex-main-container">
+  <div class="media-card-desktop bordered-container margin-top-4-desktop">
+    <div class="media-object-desktop">
+      <%= image_tag "logo", :class => "logo"%>
+    </div>
+    <div class="media-text-desktop">
+      <p class="item-title">Reporte de Inquilino</p>
+      <div class="item-description">
+        <p>Fecha: julio 18 2019 Válido hasta: octubre 16 2019</p>
+        <p>Cálculado con Homie Technology que tiene un rango de 0 a 1500</p>
+      </div>
+    </div>
+  </div>
+  <div class="body-desktop-container">
+    <div class="bordered-container">
+      <div class="number-inside-circle">
+        <%= image_tag "circle", :class => "icon-profile"%>
+        <span>1052</span>
+      </div>
+      <div class="container-score">
+        <div class="grid-score">
+          <div class="rank-start">0</div>
+          <div class="rank-end">1500</div>
+          <div class="rank-image">
+            <%= image_tag "range", :class => "icon-range"%>
+          </div>
+          <div class="rank-value">Malo</div>
+          <div class="rank-value">Medio</div>
+          <div class="rank-value">Bueno</div>
+          <div class="rank-value">Excelente</div>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="item-title">Este puntaje es Bueno</p>
+        <p class="item-description padding-lr-10">Rango superior al 43% de los inquilinos de México</p>
+      </div>
+      <div class="score-result">
+        <p>Indentificación Otorgada: <span>Verificada</span></p>
+        <p>Nivel Socioeconómico: <span>NA</span></p>
+        <p>Listas negras: <span>No</span>
+        <p>Prevención de lavado de dinero: <span>No disponible</span></p>
+        <p>Redes sociales viculadas: <span>Ninguna</span></p>
+      </div>
+    </div>
+    <div class="body-second-section">
+      <div class="media-card bordered-container margin-left margin-top-movil margin-bottom">
+        <div class="media-object">
+          <%= image_tag "icon-profile", :class => "icon-profile"%>
+        </div>
+        <div class="media-text">
+          <p class="item-title">Esteban Manuel Lopez Ramirez</p>
+          <p class="item-description">centro, 123, Piso 12, Depa 123, Centro, Yucatán</p>
+          <p class="item-description">$44,000.00</p>
+        </div>
+      </div>
+      <div class="bordered-container margin-left margin-top-movil margin-bottom">
+        <div class="personal-information-item">
+          <div>
+            <%= image_tag "job", :class => "icon-default-size"%>
+          </div>
+          <div>
+            <p>/ <span>Empleo</span></p>
+          </div>
+        </div>
+        <div class="personal-information-item">
+          <div>
+            <%= image_tag "book", :class => "icon-default-size"%>
+          </div>
+          <div>
+            <p>Especialidad-o-diplomado / <span>UTM</span></p>
+          </div>
+        </div>
+        <div class="personal-information-item">
+          <div>
+            <%= image_tag "money", :class => "icon-default-size"%>
+          </div>
+          <div>
+            <p>Ingresos verificados <span>No disponible</span></p>
+          </div>
+        </div>
+        <div class="personal-information-item">
+          <div>
+            <%= image_tag "email", :class => "icon-default-size"%>
+          </div>
+          <div>
+            <p><span>dev+victor126inquilino@homie.mx</span></p>
+          </div>
+        </div>
+        <div class="personal-information-item">
+          <div>
+            <%= image_tag "telephone", :class => "icon-default-size"%>
+          </div>
+          <div>
+            <p><span>9992023842</span></p>
+          </div>
+        </div>
+        <div class="personal-information-item">
+          <div>
+            <%= image_tag "reference", :class => "icon-default-size"%>
+          </div>
+          <div>
+            <p>
+              Referencia: <span>Lorena Esther Manzanero Rodriguez</span>
+            </p>
+            <p>centro, 123, Centro, Yucatán, CP 97000</p>
+          </div>
+        </div>
+        <div class="personal-information-item">
+          <div>
+            <%= image_tag "reference", :class => "icon-default-size"%>
+          </div>
+          <div>
+            <p>Referencia: <span>Catalina Esmeralda  Estrada Castro</span></p>
+            <p>centro, 123, Petrolera, Veracruz, CP 96500</p>
+          </div>
+        </div>
+        <div class="personal-information-item">
+          <div>
+            <%= image_tag "reference", :class => "icon-default-size"%>
+          </div>
+          <div>
+            <p>Referencia: <span>Luis Manuel Castillo Lopez</span></p>
+            <p>centro, 123, Centro, Yucatán, CP 97000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slogan text-center bordered-container">
+    <div>
+      <p>
+        Nuestra tecnología nos permita rentar tu inmueble al <span>mejor inquilino</span>,
+        sin <span>ningún riesgo</span> y en <span>tiempo record</span>.
+      </p>
+    </div>
+    <div>
+      <%= image_tag "powered-by", :class => "icon-sponsor"%>
+    </div>
+  </div>
+  <div class="save">
+    <%= button_tag class: 'button-save' do%>
+      <i class="glyphicon glyphicon-download-alt"></i> Guardar
+    <% end %>
+  </div>
+</div>

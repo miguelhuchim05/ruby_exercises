@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import './components/imageViewer'
+import './components/imageViewer';
 import ImageGallery from './components/imageViewer';
 
 function App() {

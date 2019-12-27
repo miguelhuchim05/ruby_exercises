@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
-import Images from './imageGalleryContext' 
+import Images from './imageGalleryContext';
+import ImageView from './imageView';
 
 const ImageGallery = () => {
   const contextImages = useContext(Images);
   return(
     <div className="photos">
-      <img src={contextImages.firstImage}/>
-      <img src={contextImages.secondImage}/>
-      <img src={contextImages.thirdImage}/>
+      <ImageView url={contextImages.firstImage} />
+      <ImageView url={contextImages.secondImage} />
+      <ImageView url={contextImages.thirdImage} />
     </div>
   );
 }

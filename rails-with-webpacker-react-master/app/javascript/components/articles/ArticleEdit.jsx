@@ -1,64 +1,66 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from './Form';
+import axios from 'axios';
 
-class ArticleEdit extends Component {
-  constructor() {
-    super();
-    this.state = {title: '', content: ''};
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
-  }
+function ArticleEdit(props) {
+  const [state, setState] = useState({title: '', content: ''});
 
-  componentDidMount() {
-    fetch(`api/articles/${this.props.match.params.id}`)
-      .then(response => response.json())
+  useEffect(()=> {
+    axios.get(`api/articles/${props.match.params.id}`)
+      .then(response => response.data)
       .then((data) => {
-        this.setState(data);
+        setState(data);
       })
       .catch(error => console.log('error', error));
-  }
+  }, []);
 
-  handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`api/articles/${this.props.match.params.id}`, {
-        method: 'PATCH',
-        body: JSON.stringify(this.state),
-        headers: { 'Content-Type': 'application/json' }
-      })
-      .then(response => response.json())
+    axios.patch(`api/articles/${props.match.params.id}`, {
+      title: state.title,
+      content: state.content
+    }
+    )
+      .then(response => response.data)
       .then(data => {
-        this.props.history.push(`/articles/${this.state.id}`);
+        props.history.push(`/articles/${props.match.params.id}`);
       })
       .catch(error => console.log('error', error));
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+  const handleChange = (event) => {
+    const key = event.target.name;
+    const value = event.target.value;
+
+    const title = key == 'title' ? value : state.title;
+    const content = key == 'content' ? value : state.content;
+
+    const article = {title: title, content: content};
+    setState(article);
   }
 
-  handleCancel() {
-    this.props.history.push(`/articles/${this.state.id}`);
+  const handleCancel = () => {
+    props.history.push(`/articles/${props.match.params.id}`);
   }
 
-  render() {
-    const article = {
-      title: this.state.title,
-      content: this.state.content
-    };
-    const settings = {
-      handleSubmit: this.handleSubmit,
-      handleChange: this.handleChange,
-      handleCancel: this.handleCancel,
-      actionLabel: 'Update'
-    };
-    return (
-      <div>
-        <h1>Edit {this.state.title}</h1>
-        <Form article={article} settings={settings} />
-      </div>
-    );
-  }
+  const article = {
+    title: state.title,
+    content: state.content
+  };
+
+  const settings = {
+    handleSubmit: handleSubmit,
+    handleChange: handleChange,
+    handleCancel: handleCancel,
+    actionLabel: 'Update'
+  };
+
+  return (
+    <div>
+      <h1>Edit {state.title}</h1>
+      <Form article={article} settings={settings} />
+    </div>
+  );
 }
 
 export default ArticleEdit;

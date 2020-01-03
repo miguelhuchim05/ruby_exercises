@@ -2,17 +2,25 @@ import React, { useState, useEffect } from 'react';
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom';
 import {addArticle, allArticles} from '../../actions/articles';
+import axios from 'axios';
 
 function ArticleList(props) {
 
-  // componentDidMount() {
-  //   this.props.listArticles();
-  // }
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+      axios.get('api/articles')
+        .then(response => {
+          setArticles(response.data);
+        })
+        .catch(error => console.log('error', error));
+   }, []);
+
 
   return (
     <div>
       {
-        this.props.articles.map((article) => {
+        articles.map((article) => {
           return(
             <div key={article.id}>
               <h2><Link to={`/articles/${article.id}`}>{article.title}</Link></h2>
@@ -22,7 +30,7 @@ function ArticleList(props) {
           );
         })
       }
-      <button onClick={() => this.props.addArticle('Hola', 'Holi')} className="btn btn-outline-primary">Create Article</button>
+      <Link to="/articles/new" className="btn btn-outline-primary">Create Article</Link>
     </div>
   );
 }

@@ -1,9 +1,17 @@
 class Api::ArticlesController < ApplicationController
   skip_before_action :verify_authenticity_token
+  DEFAULT_PER_PAGE = 10
 
   def index
-    @articles = Article.all
-    render json: @articles
+    articles = Article.all.order(created_at: :desc)
+    articles_per_page = params[:amount_per_page] || DEFAULT_PER_PAGE
+    @paginated_articles = articles.paginate(page: params[:page], per_page: articles_per_page)
+
+    render json: {
+      articlesList: @paginated_articles,
+      page: @paginated_articles.current_page,
+      pages: @paginated_articles.total_pages
+    }
   end
 
   def show

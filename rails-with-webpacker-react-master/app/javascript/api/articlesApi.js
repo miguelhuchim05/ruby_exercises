@@ -20,6 +20,15 @@ class ArticlesApi {
         return error;
       });
   }
+  static getNextArticles(page, articlesPerPage) {
+    return axios.get(`api/articles?page=${page}&amount_per_page=${articlesPerPage}`)
+        .then(response => {
+          return response.data;
+        })
+        .catch(error => {
+          return error;
+        });
+  }
 }
 
 export default ArticlesApi;

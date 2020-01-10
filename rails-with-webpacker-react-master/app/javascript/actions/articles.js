@@ -49,9 +49,18 @@ export function allArticles(){
   }
 }
 
-export function successLoadArticles(articles) {
+export function getArticles(page, articlesPerPage){
+  return function(dispatch){
+    return ArticlesApi.getNextArticles(page, articlesPerPage).then(response => {
+      dispatch(successLoadArticles(response));
+    }).catch(error => {
+      console.log('error', error)
+    });
+  }
+}
+export function successLoadArticles(response) {
   return {
     type: actionTypes.ALL_ARTICLES,
-    articles
+    response
   };
 }
